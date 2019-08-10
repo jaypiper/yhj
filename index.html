@@ -3,58 +3,264 @@
   <head>
     <meta charset="utf-8">
     <title>益华居</title>
+    <script>
+      function FindType(){
+        var r=document.getElementsByName("wintype");
+        for(var i=0;i<r.length;i++){
+          if(r[i].checked){
+            return i;
+          }
+        }
+      }
+      function compute(){
+        var tp=FindType();
+        if(tp==0){
+          var a=document.getElementById("ina").value;
+          var b=document.getElementById("inb").value;
+          document.getElementById("a1").innerHTML="边框";
+          document.getElementById("b1").innerHTML="2";
+          document.getElementById("c1").innerHTML=b;
+          document.getElementById("a2").innerHTML="上滑";
+          document.getElementById("b2").innerHTML="1";
+          document.getElementById("c2").innerHTML=a-50;
+          document.getElementById("a3").innerHTML="下滑";
+          document.getElementById("b3").innerHTML="1";
+          document.getElementById("c3").innerHTML=a-50;
+          document.getElementById("a4").innerHTML="锁柱";
+          document.getElementById("b4").innerHTML="3";
+          document.getElementById("c4").innerHTML=b-92;
+          document.getElementById("a5").innerHTML="扇宽";
+          document.getElementById("b5").innerHTML="4";
+          document.getElementById("c5").innerHTML=(Number(a)+Number(22))/2;
+          document.getElementById("a6").innerHTML="扇高";
+          document.getElementById("b6").innerHTML="4";
+          document.getElementById("c6").innerHTML=b-82;
+          document.getElementById("a7").innerHTML="单勾";
+          document.getElementById("b7").innerHTML="2";
+          document.getElementById("c7").innerHTML=b-82;
+          document.getElementById("a8").innerHTML="双勾";
+          document.getElementById("b8").innerHTML="1";
+          document.getElementById("c8").innerHTML=b-82;
+          document.getElementById("a9").innerHTML="玻璃";
+          document.getElementById("b9").innerHTML="2";
+          document.getElementById("c9").innerHTML="宽："+String((Number(a)+Number(22))/2-10)+"； 高："+String(Number(b)-92);
+        }
+        if(tp==1){
+          var a=document.getElementById("ina").value;
+          var b=document.getElementById("inb").value;
+          var c=document.getElementById("inc").value;
+          document.getElementById("a1").innerHTML="边框";
+          document.getElementById("b1").innerHTML="2";
+          document.getElementById("c1").innerHTML=b;
+          document.getElementById("a2").innerHTML="上滑";
+          document.getElementById("b2").innerHTML="1";
+          document.getElementById("c2").innerHTML=a-50;
+          document.getElementById("a3").innerHTML="下滑";
+          document.getElementById("b3").innerHTML="1";
+          document.getElementById("c3").innerHTML=a-50;
+          document.getElementById("a4").innerHTML="下固";
+          document.getElementById("b4").innerHTML="1";
+          document.getElementById("c4").innerHTML=a-50;
+          document.getElementById("a5").innerHTML="反盖板";
+          document.getElementById("b5").innerHTML="1";
+          document.getElementById("c5").innerHTML=a-50;
+          document.getElementById("a6").innerHTML="中柱";
+          document.getElementById("b6").innerHTML="1";
+          document.getElementById("c6").innerHTML=c-96;
+          document.getElementById("a7").innerHTML="边盖";
+          document.getElementById("b7").innerHTML="2";
+          document.getElementById("c7").innerHTML=c-96;
+          document.getElementById("a8").innerHTML="锁柱";
+          document.getElementById("b8").innerHTML="3";
+          document.getElementById("c8").innerHTML=b-c-31;
+          document.getElementById("a9").innerHTML="横压线";
+          document.getElementById("b9").innerHTML="8";
+          document.getElementById("c9").innerHTML=(a-119)/2;
+          document.getElementById("a10").innerHTML="竖压线";
+          document.getElementById("b10").innerHTML="8";
+          document.getElementById("c10").innerHTML=c-128;
+          document.getElementById("a11").innerHTML="扇宽";
+          document.getElementById("b11").innerHTML="4";
+          document.getElementById("c11").innerHTML=(Number(a)+Number(22))/2;
+          document.getElementById("a12").innerHTML="扇高";
+          document.getElementById("b12").innerHTML="4";
+          document.getElementById("c12").innerHTML=b-c-21;
+          document.getElementById("a13").innerHTML="单勾";
+          document.getElementById("b13").innerHTML="2";
+          document.getElementById("c13").innerHTML=b-c-21;
+          document.getElementById("a14").innerHTML="双勾";
+          document.getElementById("b14").innerHTML="1";
+          document.getElementById("c14").innerHTML=b-c-21;
+          document.getElementById("a15").innerHTML="扇玻璃";
+          document.getElementById("b15").innerHTML="2";
+          document.getElementById("c15").innerHTML="宽："+String((Number(a)+Number(22))/2-140)+"； 高："+String(Number(b)-c-161);
+          document.getElementById("a16").innerHTML="固定玻璃";
+          document.getElementById("b16").innerHTML="2";
+          document.getElementById("c16").innerHTML="宽："+String((Number(a)-Number(119))/2-10)+"； 高："+String(Number(c)-106);
+        }
+        if(tp==2){
+          var a=document.getElementById("ina").value;
+          var b=document.getElementById("inb").value;
+          document.getElementById("a1").innerHTML="边框";
+          document.getElementById("b1").innerHTML="2";
+          document.getElementById("c1").innerHTML=b;
+          document.getElementById("a2").innerHTML="上滑";
+          document.getElementById("b2").innerHTML="1";
+          document.getElementById("c2").innerHTML=a-50;
+          document.getElementById("a3").innerHTML="下滑";
+          document.getElementById("b3").innerHTML="1";
+          document.getElementById("c3").innerHTML=a-50;
+          document.getElementById("a4").innerHTML="锁柱";
+          document.getElementById("b4").innerHTML="2";
+          document.getElementById("c4").innerHTML=b-92;
+          document.getElementById("a5").innerHTML="扇宽";
+          document.getElementById("b5").innerHTML="8";
+          document.getElementById("c5").innerHTML=(Number(a)+Number(98))/4;
+          document.getElementById("a6").innerHTML="扇高";
+          document.getElementById("b6").innerHTML="8";
+          document.getElementById("c6").innerHTML=b-82;
+          document.getElementById("a7").innerHTML="单勾";
+          document.getElementById("b7").innerHTML="4";
+          document.getElementById("c7").innerHTML=b-82;
+          document.getElementById("a8").innerHTML="双勾";
+          document.getElementById("b8").innerHTML="2";
+          document.getElementById("c8").innerHTML=b-82;
+          document.getElementById("a9").innerHTML="四扇收口";
+          document.getElementById("b9").innerHTML="2";
+          document.getElementById("c9").innerHTML=b-82;
+          document.getElementById("a10").innerHTML="玻璃";
+          document.getElementById("b10").innerHTML="4";
+          document.getElementById("c10").innerHTML="宽："+String((Number(a)+Number(98))/4-10)+"； 高："+String(Number(b)-92);
+        }
+        if(tp==3){
+          var a=document.getElementById("ina").value;
+          var b=document.getElementById("inb").value;
+          var c=document.getElementById("inc").value;
+          document.getElementById("a1").innerHTML="边框";
+          document.getElementById("b1").innerHTML="2";
+          document.getElementById("c1").innerHTML=b;
+          document.getElementById("a2").innerHTML="上滑";
+          document.getElementById("b2").innerHTML="1";
+          document.getElementById("c2").innerHTML=a-50;
+          document.getElementById("a3").innerHTML="下滑";
+          document.getElementById("b3").innerHTML="1";
+          document.getElementById("c3").innerHTML=a-50;
+          document.getElementById("a4").innerHTML="下固";
+          document.getElementById("b4").innerHTML="1";
+          document.getElementById("c4").innerHTML=a-50;
+          document.getElementById("a5").innerHTML="反盖板";
+          document.getElementById("b5").innerHTML="1";
+          document.getElementById("c5").innerHTML=a-50;
+          document.getElementById("a6").innerHTML="中柱";
+          document.getElementById("b6").innerHTML="3";
+          document.getElementById("c6").innerHTML=c-96;
+          document.getElementById("a7").innerHTML="边盖";
+          document.getElementById("b7").innerHTML="2";
+          document.getElementById("c7").innerHTML=c-96;
+          document.getElementById("a8").innerHTML="锁柱";
+          document.getElementById("b8").innerHTML="2";
+          document.getElementById("c8").innerHTML=b-c-31;
+          document.getElementById("a9").innerHTML="横压线";
+          document.getElementById("b9").innerHTML="16";
+          document.getElementById("c9").innerHTML=(a-189)/4;
+          document.getElementById("a10").innerHTML="竖压线";
+          document.getElementById("b10").innerHTML="16";
+          document.getElementById("c10").innerHTML=c-128;
+          document.getElementById("a11").innerHTML="扇宽";
+          document.getElementById("b11").innerHTML="8";
+          document.getElementById("c11").innerHTML=(Number(a)+Number(98))/4;
+          document.getElementById("a12").innerHTML="扇高";
+          document.getElementById("b12").innerHTML="8";
+          document.getElementById("c12").innerHTML=b-c-21;
+          document.getElementById("a13").innerHTML="单勾";
+          document.getElementById("b13").innerHTML="4";
+          document.getElementById("c13").innerHTML=b-c-21;
+          document.getElementById("a14").innerHTML="双勾";
+          document.getElementById("b14").innerHTML="2";
+          document.getElementById("c14").innerHTML=b-c-21;
+          document.getElementById("a15").innerHTML="扇玻璃";
+          document.getElementById("b15").innerHTML="4";
+          document.getElementById("c15").innerHTML="宽："+String((Number(a)+Number(98))/4-140)+"； 高："+String(Number(b)-c-161);
+          document.getElementById("a16").innerHTML="固定玻璃";
+          document.getElementById("b16").innerHTML="2";
+          document.getElementById("c16").innerHTML="宽："+String((Number(a)-Number(189))/4-10)+"； 高："+String(Number(c)-106);
+        }
+      }
+    </script>
   </head>
   <body>
     <h1>益华居门窗计算</h1>
     <h3>请选择窗类型，并输入数据</h3>
     <p>下高为可选选项，在窗户没有下方固定类型时无需填入</p>
     <form>
-        <div id="WinChoose">
-            <input type="radio" name="wintype" value="1" checked="checked">两窗下方无固定玻璃
-            <input type="radio" name="wintype" value="2">两窗下方有固定玻璃
-            <input type="radio" name="wintype" value="3">四窗下方无固定玻璃
-            <input type="radio" name="wintype" value="4">四窗下方有固定玻璃 
+        <div>
+            <input type="radio" name="wintype" checked="checked">两窗下方无固定玻璃
+            <input type="radio" name="wintype">两窗下方有固定玻璃
+            <input type="radio" name="wintype">四窗下方无固定玻璃
+            <input type="radio" name="wintype">四窗下方有固定玻璃 
         </div><br><br>
-
+        
         <span>总宽</span><input id="ina" type="text" placeholder="请输入总宽">
         <span>总高</span><input id="inb" type="text" placeholder="请输入总高">
         <span>下高</span><input id="inc" type="text" placeholder="下方无固定玻璃时无需输入">
-        <input type="submit" value="提交" onclick="compute()">
+        <button type="button" value="提交" onclick="compute()">提交</button>
     </form><br><br>
     <table border="1" rules="rows" width="400" >
       <tr>
         <td>名称</td><td>数量</td><td>尺寸</td>
       </tr>
       <tr>
-        <td>边框</td><td>2</td><td id=a1></td>
+        <td height="20" id="a1"></td><td id="b1"></td><td id="c1"></td>
       </tr>
-
+      <tr>
+        <td height="20" id="a2"></td><td id="b2"></td><td id="c2"></td>
+      </tr>
+      <tr>
+        <td height="20" id="a3"></td><td id="b3"></td><td id="c3"></td>
+      </tr>
+      <tr>
+        <td height="20" id="a4"></td><td id="b4"></td><td id="c4"></td>
+      </tr>
+      <tr>
+        <td height="20" id="a5"></td><td id="b5"></td><td id="c5"></td>
+      </tr>
+      <tr>
+        <td height="20" id="a6"></td><td id="b6"></td><td id="c6"></td>
+      </tr>
+      <tr>
+        <td height="20" id="a7"></td><td id="b7"></td><td id="c7"></td>
+      </tr>
+      <tr>
+        <td height="20" id="a8"></td><td id="b8"></td><td id="c8"></td>
+      </tr>
+      <tr>
+        <td height="20" id="a9"></td><td id="b9"></td><td id="c9"></td>
+      </tr>
+      <tr>
+        <td height="20" id="a10"></td><td id="b10"></td><td id="c10"></td>
+      </tr>
+      <tr>
+        <td height="20" id="a11"></td><td id="b11"></td><td id="c11"></td>
+      </tr>
+      <tr>
+        <td height="20" id="a12"></td><td id="b12"></td><td id="c12"></td>
+      </tr>
+      <tr>
+        <td height="20" id="a13"></td><td id="b13"></td><td id="c13"></td>
+      </tr>
+      <tr>
+        <td height="20" id="a14"></td><td id="b14"></td><td id="c14"></td>
+      </tr>
+      <tr>
+        <td height="20" id="a15"></td><td id="b15"></td><td id="c15"></td>
+      </tr>
+      <tr>
+        <td height="20" id="a16"></td><td id="b16"></td><td id="c16"></td>
+      </tr>
     </table>
     
     
   </body>
-  <script>
-    function FindType(){
-      var r=document.getElementsByName("wintype");
-      for(var i=0;i<r.length;i++){
-        if(r[i].checked){
-          return i;
-        }
-      }
-    }
-    function compute(){
-      var tp=FindType();
-      if(tp==0){
-        var a=document.getElementById("ina").value;
-        var b=document.getElementById("inb").value;
-        document.getElementById("a1").innerHTML=a;
-      }
-      if(tp==1){
-        var a=document.getElementById("ina").value;
-        var b=document.getElementById("inb").value;
-        var c=document.getElementById("inc").value;
-      }
-    }
-  </script>
+  
 </html>
 
