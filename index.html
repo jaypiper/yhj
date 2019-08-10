@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>益华居</title>
+  </head>
+  <body>
+    <h1>益华居门窗计算</h1>
+    <h3>请选择窗类型，并输入数据</h3>
+    <p>下高为可选选项，在窗户没有下方固定类型时无需填入</p>
+    <form>
+        <div id="WinChoose">
+            <input type="radio" name="wintype" value="1" checked="checked">两窗下方无固定玻璃
+            <input type="radio" name="wintype" value="2">两窗下方有固定玻璃
+            <input type="radio" name="wintype" value="3">四窗下方无固定玻璃
+            <input type="radio" name="wintype" value="4">四窗下方有固定玻璃 
+        </div><br><br>
+
+        <span>总宽</span><input id="ina" type="text" placeholder="请输入总宽">
+        <span>总高</span><input id="inb" type="text" placeholder="请输入总高">
+        <span>下高</span><input id="inc" type="text" placeholder="下方无固定玻璃时无需输入">
+        <input type="submit" value="提交" onclick="compute()">
+    </form><br><br>
+    <table border="1" rules="rows" width="400" >
+      <tr>
+        <td>名称</td><td>数量</td><td>尺寸</td>
+      </tr>
+      <tr>
+        <td>边框</td><td>2</td><td id=a1></td>
+      </tr>
+
+    </table>
+    
+    
+  </body>
+  <script>
+    function FindType(){
+      var r=document.getElementsByName("wintype");
+      for(var i=0;i<r.length;i++){
+        if(r[i].checked){
+          return i;
+        }
+      }
+    }
+    function compute(){
+      var tp=FindType();
+      if(tp==0){
+        var a=document.getElementById("ina").value;
+        var b=document.getElementById("inb").value;
+        document.getElementById("a1").innerHTML=a;
+      }
+      if(tp==1){
+        var a=document.getElementById("ina").value;
+        var b=document.getElementById("inb").value;
+        var c=document.getElementById("inc").value;
+      }
+    }
+  </script>
+</html>
+
